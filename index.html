@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web moderno-HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        exercicios HTML
+    </header>
+
+    <nav id="linkss">
+
+        <a href test-atrib="exercicios/teste.html">00 - teste 0</a><br>
+
+        <a href test-atrib="exercicios/teste1.html" >01 - teste 01</a><br> 
+       
+        <a href test-atrib="exercicios/teste2.html" >02 - teste 02</a><br>
+
+        <a href test-atrib="exercicios/listas.html" > 03 -lista-</a><br>
+        
+        <a href="exercicios/listasAninhadas.html" > 04-lista Aninhada-</a> <br>
+
+        <a href test-atrib="exercicios/links.html" > 05-google-</a> <br>
+        
+        <a href test-atrib="exercicios/links2.html" > 06-google 2-</a> <br> 
+
+        <a href test-atrib="exercicios/tabela.html" > 07-tabela-</a> <br>
+
+        <a href test-atrib="exercicios/form/form.html" > 08-formulario-</a> <br>
+
+        <a href test-atrib="exercicios/imagens.html" > 09-imagens-</a> <br>
+
+        <a href test-atrib="exercicios/video.html" > 010-imagens-</a> <br>
+
+        <a href test-atrib="exercicios/tagsnaovisuais.html" > 011-tags nao visuais-</a> <br>
+        
+    </nav>
+    <div id="div">
+            <h4>
+                essa é a div q é uma div
+            </h4>
+    </div>
+
+    <div>
+        
+    </div>
+    <section id="conteudo">
+        <div>ola pessoas</div>
+    </section>
+
+    <footer >  
+        curso de web moderno HTML
+    </footer>
+
+    <script>
+          document.querySelectorAll('[test-atrib]').forEach(link => {
+
+
+            const conteudo = document.getElementById('conteudo')
+
+
+            link.onclick = function(e) {
+            
+                e.preventDefault()
+
+                fetch(link.getAttribute('test-atrib'))
+                    .then(link => link.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+
+</body>
+</html>

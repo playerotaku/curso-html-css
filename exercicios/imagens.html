@@ -1,0 +1,79 @@
+<div wb-slider>
+    <p>
+        <img src="../imagens/images.jpg" alt="redezinha"  width="auto" height="342" title="our dates">
+    </p>
+
+    <p>
+        <img src="../imagens/images (1).jpg" alt="sorrizinho" width="auto" height="342" title="our dates">
+    </p>
+
+    <p>
+        <img src="../imagens/514320.jpg" alt="sofazinho" width="auto" height="342" title="our dates" >
+    </p>
+    
+    <p>
+        <img  src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="avatar" height="342" class="imagemtexto" >
+    </p>
+</div>
+
+
+
+ 
+
+
+<style>
+
+p{
+    display: none;
+    position: absolute;
+}
+
+</style>
+
+<script>    
+
+    function mover(elem, inicio, fim , passo, callback ){
+        const novoInicio = inicio - passo
+        if(novoInicio >= fim){
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim , passo, callback )), 7    
+        }else {
+            callback()
+        }
+    }
+
+    const p = document.querySelector('[wb-slider] > p')
+
+    p.style.display = 'block'
+    // mover(p , 1500, -650, 2, () => {
+    //     console.log('terminou')
+    //     })
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wb-slider] > p')
+        const slide = Array.from(elementos)
+        exibirSlide(slide,slide[0])
+        
+    }
+    function exibirSlide(slides,slide){
+        slide.style.display = 'block'
+        const inicio = innerWidth
+        const fim = -slide.clientWidth
+        slide.style.left = `${inicio}px`
+
+        mover(slide,inicio, fim, 5, ()=>{
+            slide.style.display = 'none'
+            exibirSlide(slides, getproximo(slides, slide))
+        })
+
+
+    }
+    function getproximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1
+        return i< lista.length ? lista[i] : lista[0]
+    }
+
+    slider()
+
+
+</script>
