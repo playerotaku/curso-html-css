@@ -10,8 +10,35 @@
             padding: 20px;
             background-color: coral;
             border: solid 5px;
-            display: none;
+            
+            
         }
+
+        @media (orientation: landscape ){
+            .muito-pequeno{
+                position: sticky;
+                top: 20px
+                /* font-size: 80px;
+                box-shadow: 6px 6px 2px 2px #333; */
+            }
+            .intervalo{
+                display: none;
+            }
+            .pequeno-retrato{
+                display: none;
+            }
+        }
+
+
+        @media (orientacion: portrait) {
+            .intervalo{ 
+                font-size: large;
+            }
+            .muito-pequeno, .pequeno-retrato{
+                display: none;
+            }
+        }
+            
     </style>
 </head>
 <body>
