@@ -24,6 +24,7 @@
         }
         
         .menu ul {
+
             list-style: none;
             margin: 0;
             padding: 0;
@@ -51,9 +52,31 @@
             background: #f50a31;
             color: #fff;
         }
+
+        
+        
+        
         /* ==================== */
         /* Solução com Flex Box */
         /* ==================== */
+
+
+        .cabecalho{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu{
+            flex-grow: 10;
+        }
+        .menu ul{
+            display: flex;
+        }
+        .autenticacao :hover{
+            box-shadow: #000 2px 2px 2px ;
+        }
+        
     </style>
 </head>
 
@@ -81,7 +104,7 @@
             </ul>
         </nav>
         <aside class="autenticacao">
-            <a href="#login">Login</a>
+            <a href="#login" class="botao">Login</a>
             <a href="#registar" class="botao destaque">Registrar</a>
         </aside>
     </header>

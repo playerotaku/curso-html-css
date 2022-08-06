@@ -24,31 +24,43 @@
             background-color: tomato;
             order: 1;
             order: 0;
-            order: -1;
+            /* order: -1; */
             align-self: center;
             align-self: flex-end;
             align-self: flex-start;
             align-self: stretch;
-            order: 0;
+            
         }
         .flex-container div:nth-child(1){
             width: 100px;
-            flex-grow: 3;
+            /* flex-grow: 0; */
         }
         .flex-container div:nth-child(2){
             width: 100px;
-            flex-grow: 2;
+            /* flex-grow: 0; */
         }
         .flex-container div:nth-child(3){
-            width: 100px;
-            flex-grow: 1;
+            /* width: 100px; */
+            /* flex-grow: 1; */
         }
         .flex-container div:nth-child(4){
-            width: 100px;
-            flex-grow: 0;
+            /* flex-grow: 1; */
+            /* width: 100px; */
+            /* flex-grow: 0; */
         }
+        
+        .flex-container div:nth-child(5){
+            /* flex-grow: 1; */
+            /* width: 100px; */
+            /* flex-grow: 0; */
+        }
+        
         .flex-container span{
             border: solid 3px darkblue ;
+            flex-grow: 1;
+        }
+        .oa{
+            width: 100px;
         }
     </style>
 </head>
@@ -59,9 +71,10 @@
         <div class=" nolabel">2</div>
         <div class=" nolabel">3</div>
         <div class=" nolabel">4</div>
-
+        <div class=" nolabel">5</div>
+        
         <span>oi</span>
-        <span>opa</span>
+        <span class="oa">a</span>
     </div>
     <script src="js/tag.js"></script>
 </body>
